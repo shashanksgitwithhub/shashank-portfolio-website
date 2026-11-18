@@ -39,7 +39,11 @@
     })();
 
 
-    const API_URL = "https://2lf5l19hxk.execute-api.ap-south-2.amazonaws.com/visitors";
+    /* =========================================
+       CLOUDFLARE VISITOR COUNTER
+    ========================================= */
+
+    const API_URL = "https://cloudflare-visitor-counter.shashanktj5ce.workers.dev/visitors";
 
     async function updateVisitorCount() {
 
@@ -52,12 +56,12 @@
             });
 
             if (!response.ok) {
-                throw new Error("API request failed");
+                throw new Error("Cloudflare Worker request failed");
             }
 
             const data = await response.json();
 
-            counter.textContent = data.count;
+            counter.textContent = data.visitors;
 
         } catch (error) {
 
