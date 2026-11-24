@@ -657,143 +657,154 @@
 
 
         <!-- =========================================
-             ARCHITECTURE
+            ARCHITECTURE
         ========================================= -->
 
         <section id="architecture">
 
-            <div class="container">
+        <div class="container">
 
-                <div class="section-header">
+        <div class="section-header">
 
-                    <div class="section-number">
-                        ARCHITECTURE
-                    </div>
+            <div class="section-number">
+                ARCHITECTURE
+            </div>
 
-                    <h2 class="section-title">
-                        I don't just use cloud services.
-                    </h2>
+            <h2 class="section-title">
+                I don't just use cloud services.
+            </h2>
 
-                    <p class="section-description">
-                        I focus on understanding how infrastructure components
-                        connect together to build complete systems.
-                    </p>
+            <p class="section-description">
+                I focus on understanding how infrastructure components
+                connect together to build complete systems.
+            </p>
 
+        </div>
+
+        <div class="architecture">
+
+            <p class="architecture-description">
+                <strong>Serverless Cloud Resume Platform:</strong>
+                Originally deployed on AWS and migrated to Cloudflare. The website is delivered globally through Cloudflare Pages, while Cloudflare Workers and Workers KV power the serverless visitor counter.
+            </p>
+
+            <div class="architecture-map">
+
+                <div class="arch-branch-label arch-label-static">
+                    STATIC WEBSITE DELIVERY
                 </div>
 
+                <div class="arch-branch-label arch-label-counter">
+                    VISITOR COUNTER
+                </div>
 
-                <div class="architecture">
+                <div class="arch-node arch-browser">
+                    <span class="arch-icon">ENTRY</span>
+                    <strong>Browser</strong>
+                    <small>HTTPS request</small>
+                </div>
 
-                    <p class="architecture-description">
-                        <strong>Serverless Cloud Resume Platform:</strong>
-                        the website is delivered globally through CloudFront,
-                        while the visitor counter follows a separate serverless
-                        API path.
-                    </p>
+                <div class="arch-node arch-route53">
+                    <span class="arch-icon">DNS</span>
+                    <strong>Cloudflare DNS</strong>
+                    <small>Domain resolution</small>
+                </div>
 
-                    <div class="architecture-map">
+                <div class="arch-node arch-cloudfront">
+                    <span class="arch-icon">CDN</span>
+                    <strong>Cloudflare CDN</strong>
+                    <small>Global edge delivery</small>
+                </div>
 
-                        <div class="arch-branch-label arch-label-static">
-                            STATIC WEBSITE DELIVERY
-                        </div>
+                <div class="arch-node arch-s3">
+                    <span class="arch-icon">HOSTING</span>
+                    <strong>Cloudflare Pages</strong>
+                    <small>HTML, CSS &amp; JS</small>
+                </div>
 
-                        <div class="arch-branch-label arch-label-counter">
-                            VISITOR COUNTER
-                        </div>
+                <div class="arch-node arch-api">
+                    <span class="arch-icon">REQUEST</span>
+                    <strong>JavaScript Fetch</strong>
+                    <small>POST /visitors</small>
+                </div>
 
-                        <div class="arch-node arch-browser">
-                            <span class="arch-icon">ENTRY</span>
-                            <strong>Browser</strong>
-                            <small>HTTPS request</small>
-                        </div>
+                <div class="arch-node arch-lambda">
+                    <span class="arch-icon">COMPUTE</span>
+                    <strong>Cloudflare Workers</strong>
+                    <small>Counter logic</small>
+                </div>
 
-                        <div class="arch-node arch-route53">
-                            <span class="arch-icon">DNS</span>
-                            <strong>Route 53</strong>
-                            <small>Domain routing</small>
-                        </div>
+                <div class="arch-node arch-dynamo">
+                    <span class="arch-icon">DATA</span>
+                    <strong>Workers KV</strong>
+                    <small>Persistent visitor count</small>
+                </div>
 
-                        <div class="arch-node arch-cloudfront">
-                            <span class="arch-icon">CDN</span>
-                            <strong>CloudFront</strong>
-                            <small>Global delivery</small>
-                        </div>
+                <div class="arch-node arch-cloudwatch">
+                    <span class="arch-icon">RESPONSE</span>
+                    <strong>JSON Response</strong>
+                    <small>Worker to browser</small>
+                </div>
 
-                        <div class="arch-node arch-s3">
-                            <span class="arch-icon">STORAGE</span>
-                            <strong>Amazon S3</strong>
-                            <small>Website assets</small>
-                        </div>
+                <div class="arch-connection horizontal arch-h1">
+                    <span class="flow-dot"></span>
+                </div>
 
-                        <div class="arch-node arch-api">
-                            <span class="arch-icon">API</span>
-                            <strong>API Gateway</strong>
-                            <small>Visitor endpoint</small>
-                        </div>
+                <div class="arch-connection horizontal arch-h2">
+                    <span class="flow-dot"></span>
+                </div>
 
-                        <div class="arch-node arch-lambda">
-                            <span class="arch-icon">COMPUTE</span>
-                            <strong>Lambda</strong>
-                            <small>Counter logic</small>
-                        </div>
+                <div class="arch-connection horizontal arch-h3">
+                    <span class="flow-dot"></span>
+                </div>
 
-                        <div class="arch-node arch-dynamo">
-                            <span class="arch-icon">DATA</span>
-                            <strong>DynamoDB</strong>
-                            <small>Visitor count</small>
-                        </div>
+                <div class="arch-connection vertical arch-v-browser">
+                    <span class="flow-dot"></span>
+                </div>
 
-                        <div class="arch-node arch-cloudwatch">
-                            <span class="arch-icon">OBSERVE</span>
-                            <strong>CloudWatch</strong>
-                            <small>Logs & metrics</small>
-                        </div>
+                <div class="arch-connection horizontal arch-branch">
+                    <span class="flow-dot"></span>
+                </div>
 
-                        <div class="arch-connection horizontal arch-h1">
-                            <span class="flow-dot"></span>
-                        </div>
+                <div class="arch-connection horizontal arch-h4">
+                    <span class="flow-dot"></span>
+                </div>
 
-                        <div class="arch-connection horizontal arch-h2">
-                            <span class="flow-dot"></span>
-                        </div>
+                <div class="arch-connection horizontal arch-h5">
+                    <span class="flow-dot"></span>
+                </div>
 
-                        <div class="arch-connection horizontal arch-h3">
-                            <span class="flow-dot"></span>
-                        </div>
-
-                        <div class="arch-connection vertical arch-v-browser">
-                            <span class="flow-dot"></span>
-                        </div>
-
-                        <div class="arch-connection horizontal arch-branch">
-                            <span class="flow-dot"></span>
-                        </div>
-
-                        <div class="arch-connection horizontal arch-h4">
-                            <span class="flow-dot"></span>
-                        </div>
-
-                        <div class="arch-connection horizontal arch-h5">
-                            <span class="flow-dot"></span>
-                        </div>
-
-                        <div class="arch-connection horizontal arch-observe">
-                            <span class="flow-dot"></span>
-                        </div>
-
-                    </div>
-
-                    <div class="arch-legend">
-                        <span><i></i> Request / data flow</span>
-                        <span>Static delivery: Route 53 → CloudFront → S3</span>
-                        <span>Counter: API Gateway → Lambda → DynamoDB</span>
-                    </div>
-
+                <div class="arch-connection horizontal arch-observe">
+                    <span class="flow-dot"></span>
                 </div>
 
             </div>
 
-        </section>
+            <div class="arch-legend">
+
+                <span><i></i> Request / data flow</span>
+
+                <span>
+                    Static delivery: Cloudflare DNS
+                    &rarr; CDN &rarr; Pages
+                </span>
+
+                <span>
+                    Counter: Browser &rarr; Workers
+                    &harr; KV &rarr; response via Worker
+                </span>
+
+                <span>
+                    Deployment: GitHub &rarr; Cloudflare Pages
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 
         <!-- =========================================
@@ -922,7 +933,7 @@
     <div class="container">
 
         <div>
-            © 2026 Shashank TJ · Built with AWS.
+            © 2026 Shashank TJ · Powered by Cloudflare.
         </div>
 
         <div class="visitor-counter">
